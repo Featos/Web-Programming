@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script type="text/javascript">       
+        function calc() {
+            var w = document.getElementById('w').value;
+            var h = document.getElementById('h').value;
+
+            var pe = (parseFloat(w) + parseFloat(h)) * 2;
+            var pe1 = Math.round(pe*1000)/1000;
+            
+            var ar = parseFloat(w) * parseFloat(h);
+            var ar1 = Math.round(ar * 1000) / 1000;
+
+            document.getElementById('rs1').innerText = 'area: ' + ar1;
+            document.getElementById('rs2').innerText = 'peremeter: ' + pe1;
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="enter" class="enter" value="" id="w" placeholder="Enter Width" />
+    <br />
+    <input type="text" name="enter" class="enter" value="" id="h" placeholder="Enter Height" />
+    <br />
+    <input type="button" value="click" onclick="calc();" />
+    <div id="rs1"></div>
+    <div id="rs2"></div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        function exchange() {
+            array = arguments;
+            var a = parseFloat(array[0]);
+            var b = parseFloat(array[1]);
+
+            if (a / b > 1) {
+                var t = a;
+                a = b;
+                b = t;
+            }
+            console.log(a + " " + b);
+        }
+
+        function sign() {
+            array = arguments;
+            var c = 0;
+            for (var i = 0; i < 3; i++) {
+                if (array[i] == 0) {
+                    console.log("0");
+                    break;
+                }
+
+                if (array[i] < 0) { c++; }
+            }
+            if(c!=0){
+            if (c % 2 == 0) { console.log("+"); }
+            else { console.log("-"); }}
+        }
+
+        function fmax(array)
+        {
+
+            var max = array[0];
+            var temp = 0;
+            for(var i =0;i<array.length;i++)
+            {   
+                if(max<0 && array[i]<0)
+                {
+                    if(Math.abs(max) > Math.abs(array[i]))
+                    {
+                        max=array[i];
+                        temp = i;
+                    }
+                } else
+                if(max/array[i]<1.0)
+                {
+                    max = array[i];
+                    temp = i;
+                }
+            }
+            console.log(temp+" "+"("+max+" "+"times"+")");
+        }
+
+        function sort(){
+            array = arguments;
+            var max = array[0];
+            for(var i =0;i<array.length;i++)
+            {   
+                if(max<0 && array[i]<0)
+                {
+                    if(Math.abs(max) > Math.abs(array[i]))
+                    {
+                        max=array[i];
+                    }
+                } else
+                if((max==0 && array[i]<0) || (max<0 && array[i]==0))
+                {
+                    max=0;
+                }
+                else
+                if(max/array[i]<1.0)
+                {
+                    max = array[i];
+                }
+            }
+
+            var min = array[0];
+            for(var i =0;i<array.length;i++)
+            {   
+                if(min<0 && array[i]<0)
+                {
+                    if(Math.abs(min) < Math.abs(array[i]))
+                    {
+                        min=array[i];
+                    }
+                } else
+                if(min==0 && array[i]<0) 
+                {
+                    min=array[i];
+                }
+                else
+                if(min/array[i]>1.0)
+                {
+                    min = array[i];
+                }
+            }
+
+            var mid = array[0];
+            for(var i =0;i<array.length;i++)
+            {
+                if(array[i]!= max && array[i]!= min)
+                {
+                    mid=array[i];
+                }
+            }
+
+            console.log(max+" "+mid+" "+min);
+        }
+
+        function digit(){
+            array = arguments;
+            switch(parseInt(array[0]))
+            {
+                case 0:console.log("zero");
+                break;
+
+                case 1:console.log("one");
+                break;
+
+                case 2:console.log("two");
+                break;
+
+                case 3:console.log("three");
+                break;
+
+                case 4:console.log("four");
+                break;
+
+                case 5:console.log("five");
+                break;
+
+                case 6:console.log("six");
+                break;
+
+                case 7:console.log("seven");
+                break;
+
+                case 8:console.log("eight");
+                break;
+
+                case 9:console.log("nine");
+                break;
+
+                default:console.log("not a digit");
+                break;
+            }
+        }
+
+        function matrix()
+        {
+            array = arguments;
+            var a = array[0]*array[0];
+            var b = new array(array[0]*array[0]);
+            for(var i =0;i<a;i++)
+            {
+                b[i]=i+1;
+                console.log()
+            }
+        }
+
+        function allocate()
+        {
+            array = arguments;
+            var a = array[0];
+            for(var b = 0;b<a;b++)
+            {
+                console.log(b*5);
+            }
+        }
+
+        function compare()
+        {
+            array = arguments;
+            if(array[0] == array[1])
+            {console.log("=");}
+            else if (array[0] > array[1])
+            {console.log(">");}
+            else {console.log("<");}
+        }
+
+        function sequence(array)
+        {
+            var a = array.shift();
+            var arr = array;
+            var count = 0;
+            var temp = arr[0];
+            var c = 1;
+            for(var i=1;i<arr.length;i++)
+            {
+                if(arr[i]==temp)
+                {
+                    c++;
+                }
+                else {
+                    temp = arr[i];
+                    if(c > count)
+                    {count = c;}
+                    c=1;
+                }
+
+            }
+
+            console.log(count);
+        }
+
+        function inse(array)
+        {
+            var a = array.shift();
+            var arr = array;
+            var count = 0;
+            var c = 1;
+            for(var i=0;i<arr.length;i++)
+            {
+               if(arr[i+1]>arr[i])
+               {c++;}
+               else {if(count < c)
+               {count = c;}
+               c=1;}
+            }
+
+            console.log(count); 
+        }
+
+        function csort(array)
+        {   
+            var arr = array;
+            arr.sort();
+            for(var i=1;i<arr.length;i++)
+            {
+                if(arr[i]==arr[i-1])
+                {arr.splice(i,1)}
+            }
+            console.log(arr);
+        }
+
+        function freq(array)
+        {
+            var a = array.shift();
+            var arr = array;
+            var b = max(arr);
+            var brr = new Array(b);
+            for(var i=0;i<arr.length;i++)
+            {
+                brr[arr[i]]++;
+            }
+            var c = brr.max();
+            console.log(c);
+        }
+
+        function hello()
+        {
+            array = arguments;
+            console.log('hello'+' '+array[0]+'!');
+        }
+
+    </script>
+</body>
+
+</html>

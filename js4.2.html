@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script type="text/javascript">
+        var ip;
+        function check() {
+            ip = document.getElementById('ip');
+            var temp = parseInt(ip.value);
+            if (temp % 7 == 0 && temp % 5 == 0) { document.getElementById('rs').innerText = 'true ' + ip.value; }
+            else { document.getElementById('rs').innerText = 'false ' + ip.value; }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="enter" class="enter" value="" id="ip" placeholder="Enter Number" />
+    <input type="button" value="click" onclick="check();" />
+    <div id="rs"></div>
+</body>
+</html>

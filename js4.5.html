@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script type="text/javascript">
+
+        function calc() {
+            var n = document.getElementById('n').value;
+            var n1 = parseInt(n);
+            var t;            
+            n1 = Math.floor(n1 / 2);           
+            n1 = Math.floor(n1 / 2);           
+            n1 = Math.floor(n1 / 2);
+            t = n1 % 2;            
+            document.getElementById('rs1').innerText = t;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="enter" class="enter" value="" id="n" placeholder="Enter Number" />
+    <input type="button" value="click" onclick="calc();" />
+    <div id="rs1"></div>
+</body>
+</html>
